@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coffee Bliss</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <nav>
+  <div class="nav-container">
+    <a href="#home" class="logo">Coffee Bliss</a>
+
+    <!-- Navigation Menu (hidden on mobile, visible on desktop) -->
+    <div class="nav-menu" id="navMenu">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#tables" onclick="closeMenu()">Select Table</a>
+      <a href="#menu" onclick="closeMenu()">Menu</a>
+      <a href="#gallery" onclick="closeMenu()">Gallery</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+      <a href="#hours" onclick="closeMenu()">Hours</a>
+      <a href="#" onclick="openCart(); closeMenu();">Cart</a>
+    </div>
+
+    <!-- Icons on Right -->
+    <div class="nav-icons">
+      <div class="cart-badge" id="cartBadge" onclick="openCart()">0</div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+ 
+
+  <header class="hero" id="home">
+    <div class="hero-text">
+
+      <h1>Coffee Bliss</h1>
+      <p>Freshly Brewed. Locally Loved.</p>
+      <a href="#tables" class="btn">Select Table & Order</a>
+      <a href="#contact" class="btn" style="margin-left: 10px;">Contact</a>
+    </div>
+  </header>
+
+  <section class="table-selection" id="tables">
+    <div class="container">
+      <h2>Select Your Table</h2>
+      <p>Choose your table number to start ordering:</p>
+      <div class="table-grid">
+        <div class="table-item" onclick="selectTable(1)">Table 1</div>
+        <div class="table-item" onclick="selectTable(2)">Table 2</div>
+        <div class="table-item" onclick="selectTable(3)">Table 3</div>
+        <div class="table-item" onclick="selectTable(4)">Table 4</div>
+        <div class="table-item" onclick="selectTable(5)">Table 5</div>
+        <div class="table-item" onclick="selectTable(6)">Table 6</div>
+        <div class="table-item" onclick="selectTable(7)">Table 7</div>
+        <div class="table-item" onclick="selectTable(8)">Table 8</div>
+        <div class="table-item" onclick="selectTable(9)">Table 9</div>
+        <div class="table-item" onclick="selectTable(10)">Table 10</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about_us" id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We serve artisan coffee brewed from ethically sourced beans, creating the perfect atmosphere for work, relaxation, and connection.</p>
+    </div>
+  </section>
+
+  <section class="menu" id="menu">
+    <div class="container">
+      <div id="tableInfo" class="hidden">
+        <div class="current-table">Currently ordering for: Table <span id="currentTableNumber">-</span></div>
+      </div>
+      <h2>Our Menu</h2>
+      
+      <div class="menu-category">
+        <h3>☕ Hot Classics</h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <img src="img/espresso.jpg" alt="">
+            <h3>Espresso</h3>
+            <p>Strong and bold classic espresso shot.</p>
+            <div class="price">$3.50</div>
+            <button class="add-to-cart" onclick="addToCart('Espresso', 3.50)">Add to Cart</button>
+          </div>
+          <div class="menu-item">
+             <img src="img/cappucciono.jpg" alt="">
+            <h3>Cappuccino</h3>
+            <p>Perfect balance of espresso, steamed milk and foam.</p>
+            <div class="price">$4.25</div>
+            <button class="add-to-cart" onclick="addToCart('Cappuccino', 4.25)">Add to Cart</button>
+          </div>
+          <div class="menu-item">
+             <img src="img/americano.jpg" alt="">
+            <h3>Americano</h3>
+            <p>Smooth espresso diluted with hot water.</p>
+            <div class="price">$3.75</div>
+            <button class="add-to-cart" onclick="addToCart('Americano', 3.75)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h3>🧊 Cold Delights</h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+             <img src="img/iced_latte.jpg" alt="">
+            <h3>Iced Latte</h3>
+            <p>Refreshing chilled coffee with creamy milk.</p>
+            <div class="price">$4.75</div>
+            <button class="add-to-cart" onclick="addToCart('Iced Latte', 4.75)">Add to Cart</button>
+          </div>
+          <div class="menu-item">
+             <img src="img/frappicciono.jpg" alt="">
+            <h3>Frappuccino</h3>
+            <p>Blended iced coffee with whipped cream.</p>
+            <div class="price">$5.50</div>
+            <button class="add-to-cart" onclick="addToCart('Frappuccino', 5.50)">Add to Cart</button>
+          </div>
+          <div class="menu-item">
+             <img src="img/iced_brew.jpg" alt="">
+            <h3>Cold Brew</h3>
+            <p>Smooth and refreshing cold-brewed coffee.</p>
+            <div class="price">$4.50</div>
+            <button class="add-to-cart" onclick="addToCart('Cold Brew', 4.50)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h3>🍫 Specialty Drinks</h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+             <img src="img/mocha.jpg" alt="">
+            <h3>Mocha</h3>
+            <p>Rich chocolate and coffee blend with whipped cream.</p>
+            <div class="price">$5.00</div>
+            <button class="add-to-cart" onclick="addToCart('Mocha', 5.00)">Add to Cart</button>
+          </div>
+          <div class="menu-item">
+             <img src="img/caremel.jpg" alt="">
+            <h3>Caramel Macchiato</h3>
+            <p>Vanilla syrup, steamed milk, espresso and caramel.</p>
+            <div class="price">$5.25</div>
+            <button class="add-to-cart" onclick="addToCart('Caramel Macchiato', 5.25)">Add to Cart</button>
+          </div>
+          <div class="menu-item">
+             <img src="img/vanilla.jpg" alt="">
+            <h3>Vanilla Latte</h3>
+            <p>Classic latte with sweet vanilla syrup.</p>
+            <div class="price">$4.75</div>
+            <button class="add-to-cart" onclick="addToCart('Vanilla Latte', 4.75)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h3>🍰 Sweet Delights</h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+             <img src="img/chocolate.jpg" alt="">
+            <h3>Chocolate Cake</h3>
+            <p>Rich and moist chocolate cake slice.</p>
+            <div class="price">$6.50</div>
+            <button class="add-to-cart" onclick="addToCart('Chocolate Cake', 6.50)">Add to Cart</button>
+          </div>
+          <div class="menu-item">
+             <img src="img/cheesecake.jpg" alt="">
+            <h3>Cheesecake</h3>
+            <p>Creamy New York style cheesecake.</p>
+            <div class="price">$7.00</div>
+            <button class="add-to-cart" onclick="addToCart('Cheesecake', 7.00)">Add to Cart</button>
+          </div>
+          <div class="menu-item">
+             <img src="img/tiramisu.jpg" alt="">
+            <h3>Tiramisu</h3>
+            <p>Classic Italian coffee-flavored dessert.</p>
+            <div class="price">$7.50</div>
+            <button class="add-to-cart" onclick="addToCart('Tiramisu', 7.50)">Add to Cart</button>
+          </div>
+          <div class="menu-item">
+             <img src="img/apple.jpg" alt="">
+            <h3>Apple Pie</h3>
+            <p>Homemade apple pie with cinnamon.</p>
+            <div class="price">$5.75</div>
+            <button class="add-to-cart" onclick="addToCart('Apple Pie', 5.75)">Add to Cart</button>
+          </div>
+          <div class="menu-item">
+             <img src="img/croissant.jpg" alt="">
+            <h3>Croissant</h3>
+            <p>Buttery, flaky French pastry.</p>
+            <div class="price">$4.25</div>
+            <button class="add-to-cart" onclick="addToCart('Croissant', 4.25)">Add to Cart</button>
+          </div>
+          <div class="menu-item">
+             <img src="img/muffin.jpg" alt="">
+            <h3>Muffin</h3>
+            <p>Fresh blueberry or chocolate chip muffin.</p>
+            <div class="price">$3.75</div>
+            <button class="add-to-cart" onclick="addToCart('Muffin', 3.75)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Order</h3>
+      <button class="close-cart" onclick="closeCart()">&times;</button>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-total" id="cartTotal">Total: $0.00</div>
+    <button class="checkout-btn" onclick="checkout()">Pay & Order</button>
+  </div>
+
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <h2>Our Cafe Gallery</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="img/pic1.jpg" alt=""></div>
+        <div class="gallery-item"><img src="img/croi.jpg" alt=""></div>
+        <div class="gallery-item"><img src="img/customer.jpg" alt=""></div>
+        <div class="gallery-item"><img src="img/beans.jpg" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form class="contact-form" onsubmit="submitForm(event)">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="hours" id="hours">
+    <div class="container">
+      <h2>Opening Hours</h2>
+      <div class="hours-grid">
+        <div>
+          <h4>Monday - Friday</h4>
+          <p>7:00 AM - 8:00 PM</p>
+        </div>
+        <div>
+          <h4>Saturday - Sunday</h4>
+          <p>8:00 AM - 9:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>📍 123 Bean Street</p>
+      <p>📧 hello@coffeebliss.com</p>
+      <p>&copy; 2025 Coffee Bliss</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
